@@ -1,0 +1,23 @@
+from pathlib import Path
+
+# paths
+raw_path = Path("data/raw/balti_raw.txt")
+clean_path = Path("data/cleaned/balti_clean.txt")
+
+# make sure cleaned folder exists
+clean_path.parent.mkdir(parents=True, exist_ok=True)
+
+sentences = set()
+
+with open(raw_path, "r", encoding="utf-8") as f:
+    for line in f:
+        line = line.strip().lower()
+        if line:
+            sentences.add(line)
+
+with open(clean_path, "w", encoding="utf-8") as f:
+    for s in sorted(sentences):
+        f.write(s + "\n")
+
+print(f"Raw lines: {sum(1 for _ in open(raw_path, 'r', encoding='utf-8'))}")
+print(f"Clean lines: {len(sentences)}")
