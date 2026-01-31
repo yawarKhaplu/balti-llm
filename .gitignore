@@ -1,0 +1,6 @@
+pycache/
+*.pt
+*.pth
+*.log
+.env
+data/raw/
