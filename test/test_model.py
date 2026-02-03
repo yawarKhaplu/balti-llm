@@ -1,8 +1,8 @@
 import torch
-from tokenizer.tokenizer import CharTokenizer
+from tokenizer.word_tokenizer import WordTokenizer
 from model.minigpt import MiniGPT
 
-tokenizer = CharTokenizer()
+tokenizer = WordTokenizer()
 
 model = MiniGPT(
     vocab_size=tokenizer.vocab_size,

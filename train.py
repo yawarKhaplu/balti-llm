@@ -1,5 +1,5 @@
 import torch
-from tokenizer.tokenizer import CharTokenizer
+from tokenizer.word_tokenizer import WordTokenizer
 from model.minigpt import MiniGPT
 
 # hyperparameters
@@ -10,7 +10,7 @@ learning_rate = 3e-4
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 # load tokenizer
-tokenizer = CharTokenizer()
+tokenizer = WordTokenizer()
 
 # load data
 with open("data/cleaned/balti_clean.txt", "r", encoding="utf-8") as f:
